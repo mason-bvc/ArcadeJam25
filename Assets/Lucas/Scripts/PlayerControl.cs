@@ -60,7 +60,7 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 movement = new Vector3(vector2Movement.x * _laneSwitchSpeed, 0,vector2Movement.y * _speed);
 
-        if (_rigidbody.linearVelocity.z + movement.z < 0)
+        if (GetCurrentVelocity() + movement.z < 0)
         {
             _rigidbody.AddForce(new Vector3 (movement.x,0,0));
         }
@@ -68,6 +68,8 @@ public class PlayerControl : MonoBehaviour
         {
             _rigidbody.AddForce(movement);
         }
+
+        Debug.Log(GetCurrentVelocity());
         
     }
 
