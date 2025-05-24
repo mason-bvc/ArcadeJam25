@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class GearShiftHandler : MonoBehaviour
@@ -16,6 +16,8 @@ public class GearShiftHandler : MonoBehaviour
 
     private readonly List<Key> _inputQueue = new();
     private Gear _currentGear;
+
+    public readonly UnityEvent<Gear> Shifted = new();
 
     public void Update()
     {
@@ -94,5 +96,6 @@ public class GearShiftHandler : MonoBehaviour
         }
 
         _currentGear = newGear;
+        Shifted.Invoke(newGear);
     }
 }
