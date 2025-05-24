@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isAlive)
+        if (_isAlive && other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Collision happened");
             _isAlive = false;
