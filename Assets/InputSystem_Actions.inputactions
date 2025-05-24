@@ -547,6 +547,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Bl_1",
+                    "type": "Button",
+                    "id": "4d4e80f8-ac61-4955-948b-b804924b0e2f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -668,6 +677,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Exit_Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c6cb75a-c259-4044-aeb2-93edafae048f",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Bl_1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
