@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -9,6 +10,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _laneSwitchSpeed;
+    [SerializeField] private ParticleSystem _explosion;
+    [SerializeField] private CinemachineCamera _cam;
+    [SerializeField] private Collider _triggerer;
     public UnityEvent onDeath;
 
     private Rigidbody _rigidbody;
@@ -37,6 +41,12 @@ public class PlayerControl : MonoBehaviour
             Debug.Log("Collision happened");
             _isAlive = false;
             onDeath.Invoke();
+            _explosion.Emit(500);
+            _rigidbody.maxLinearVelocity = 10000;
+            _rigidbody.freezeRotation = false;
+            _rigidbody.AddForce(0,Mathf.Abs(GetCurrentVelocity())*2,0);
+            _cam.gameObject.SetActive(false);
+            _triggerer.enabled = false;
         }
     }
 
