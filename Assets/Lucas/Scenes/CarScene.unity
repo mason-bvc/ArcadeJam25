@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 743289500}
   - component: {fileID: 743289502}
   - component: {fileID: 743289501}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5423,6 +5423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startSegment: {fileID: 1867497868753201817, guid: bb655239cbc52d442a51f4aa157e95f9, type: 3}
+  _player: {fileID: 0}
 --- !u!4 &1622443517
 Transform:
   m_ObjectHideFlags: 0

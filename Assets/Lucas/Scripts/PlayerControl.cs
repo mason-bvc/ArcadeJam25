@@ -68,8 +68,6 @@ public class PlayerControl : MonoBehaviour
         {
             _rigidbody.AddForce(movement);
         }
-
-        Debug.Log(GetCurrentVelocity());
         
     }
 
