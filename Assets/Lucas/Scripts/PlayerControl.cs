@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private InputActionReference _playerMovement;
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
+    [SerializeField] private float laneSwitchSpeed;
     private Rigidbody _rigidbody;
 
     
@@ -30,7 +31,7 @@ public class PlayerControl : MonoBehaviour
 
         vector2Movement.y -= 0.33f;
 
-        Vector3 movement = new Vector3(0,0,vector2Movement.y * speed);
+        Vector3 movement = new Vector3(vector2Movement.x * laneSwitchSpeed,0,vector2Movement.y * speed);
 
         if (_rigidbody.linearVelocity.z + movement.z < 0)
         {
