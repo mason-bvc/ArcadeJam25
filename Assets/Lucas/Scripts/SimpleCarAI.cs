@@ -4,7 +4,7 @@ public class SimpleCarAI : MonoBehaviour
 {
     [SerializeField] private float minRandSpeed;
     [SerializeField] private float maxRandSpeed;//This should be lower than the player's max speed
-    [SerializeField] private float maxSpeed;//This should be lower than the player's max speed
+    private float maxSpeed;//This should be lower than the player's max speed
     private Rigidbody _rigidbody;
     private float speed = 1;//Setting it to one just incase something goes wring
     void Start()

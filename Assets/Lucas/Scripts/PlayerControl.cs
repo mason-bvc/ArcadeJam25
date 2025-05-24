@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -9,6 +10,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _laneSwitchSpeed;
+    [SerializeField] private ParticleSystem _explosion;
+    [SerializeField] private CinemachineCamera _cam;
+    [SerializeField] private Collider _triggerer;
     public UnityEvent onDeath;
 
     private Rigidbody _rigidbody;
@@ -32,11 +36,17 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isAlive)
+        if (_isAlive && other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Collision happened");
             _isAlive = false;
             onDeath.Invoke();
+            _explosion.Emit(500);
+            _rigidbody.maxLinearVelocity = 10000;
+            _rigidbody.freezeRotation = false;
+            _rigidbody.AddForce(0,Mathf.Abs(GetCurrentVelocity())*2,0);
+            _cam.gameObject.SetActive(false);
+            _triggerer.enabled = false;
         }
     }
 
@@ -50,7 +60,7 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 movement = new Vector3(vector2Movement.x * _laneSwitchSpeed, 0,vector2Movement.y * _speed);
 
-        if (_rigidbody.linearVelocity.z + movement.z < 0)
+        if (GetCurrentVelocity() + movement.z < 0)
         {
             _rigidbody.AddForce(new Vector3 (movement.x,0,0));
         }
@@ -58,8 +68,13 @@ public class PlayerControl : MonoBehaviour
         {
             _rigidbody.AddForce(movement);
         }
+
+        Debug.Log(GetCurrentVelocity());
         
     }
+
+    public float GetCurrentVelocity()
+    { return _rigidbody.linearVelocity.z; }
 
     public void ChangeMaxSpeed(float newSpeed)
     {
