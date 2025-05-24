@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 743289500}
   - component: {fileID: 743289502}
   - component: {fileID: 743289501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed452bd12b655a43b6d03cd94e1aeba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: -799352343274379254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _playerMovement: {fileID: 559541606595747915, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _speed: 30
   _maxSpeed: 50
   _laneSwitchSpeed: 30
@@ -431,7 +431,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -494,8 +494,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 5
+      scalar: 35
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
