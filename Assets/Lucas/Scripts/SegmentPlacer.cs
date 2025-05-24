@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class SegmentPlacer : MonoBehaviour
 {
-    private Transform _currentLocation;
+    private Vector3 _currentLocation = Vector3.zero;
     [SerializeField] private Segments _startSegment;
-    private List<GameObject> _segments;
+    private List<GameObject> _segments = new List<GameObject>();
 
-    private void Start()
-    {
-        GameObject placeSegment = Instantiate(_startSegment.gameObject, new Vector3(0,0,0), new Quaternion(0,0,0,0));
-        _currentLocation = placeSegment.GetComponent<Segments>().GetEndObject().transform;
-        _segments.Add(placeSegment);
-    }
 
     public void PlaceSegmentWithoutRemoving(Segments newSegment)
     {
-        GameObject placeSegment = Instantiate(newSegment.gameObject, _currentLocation.position, _currentLocation.rotation);
+        GameObject placeSegment = Instantiate(newSegment.gameObject, _currentLocation, new Quaternion(0,0,0,0));
 
         if (placeSegment != null && placeSegment.GetComponent<Segments>())
         {
-            _currentLocation = placeSegment.GetComponent<Segments>().GetEndObject().transform;
+            placeSegment.transform.position = _currentLocation;
+            placeSegment.transform.Rotate(0, 180, 0);
+            _currentLocation = placeSegment.GetComponent<Segments>().GetEndObject().transform.position;
+            _segments.Add(placeSegment);
         }
     }
 
     public void PlaceSegment(Segments newSegment)
     {
-        GameObject placeSegment = Instantiate(newSegment.gameObject,_currentLocation.position,_currentLocation.rotation);
+        GameObject placeSegment = Instantiate(newSegment.gameObject);
 
+        
         if (placeSegment != null && placeSegment.GetComponent<Segments>())
         {
-            _segments.Add(placeSegment);
-            GameObject toBeRemoved = _segments[1];
+            placeSegment.transform.position = _currentLocation;
+            placeSegment.transform.Rotate(0, 180, 0);
+            _segments.Add(placeSegment.gameObject);
+            GameObject toBeRemoved = _segments[0];
             _segments.RemoveAt(0);
             Destroy(toBeRemoved);
-           _currentLocation = placeSegment.GetComponent<Segments>().GetEndObject().transform;
+           _currentLocation = placeSegment.GetComponent<Segments>().GetEndObject().transform.position;
         }
     }
 }
