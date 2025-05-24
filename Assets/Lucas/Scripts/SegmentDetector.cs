@@ -8,7 +8,7 @@ public class SegmentDetector : MonoBehaviour
         if (player != null)
         {
             FindFirstObjectByType<RoadPlacementLogic>().PlaceSegment();
-            Debug.Log("Destroyed");
+            //Debug.Log("Destroyed");
             Destroy(gameObject);
         }
     }

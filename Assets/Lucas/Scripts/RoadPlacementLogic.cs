@@ -18,7 +18,7 @@ public class RoadPlacementLogic : MonoBehaviour
             _segmentPlacer.PlaceSegmentWithoutRemoving(_defaultSegment);
         }
 
-        /*for (int i = 0; i < _amountToStart / 2; i++)
+        for (int i = 0; i < _amountToStart / 2; i++)
         {
             if (Random.Range(1, _chanceForObstacle) == 1)
             {
@@ -28,7 +28,7 @@ public class RoadPlacementLogic : MonoBehaviour
             {
                 _segmentPlacer.PlaceSegmentWithoutRemoving(_defaultSegment);
             }
-        }*/
+        }
     }
 
     public void PlaceSegment()

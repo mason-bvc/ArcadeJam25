@@ -61,6 +61,9 @@ public class PlayerControl : MonoBehaviour
         
     }
 
+    public float GetCurrentVelocity()
+    { return _rigidbody.linearVelocity.z; }
+
     public void ChangeMaxSpeed(float newSpeed)
     {
         _maxSpeed = newSpeed;
