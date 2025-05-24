@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (_isAlive)
         {
+            Debug.Log("Collision happened");
             _isAlive = false;
             onDeath.Invoke();
         }
@@ -43,7 +44,7 @@ public class PlayerControl : MonoBehaviour
     {
         Vector2 vector2Movement = _playerMovement.action.ReadValue<Vector2>();
 
-        Debug.Log(_playerMovement.action.ReadValue<Vector2>());
+        //Debug.Log(_playerMovement.action.ReadValue<Vector2>());
 
         vector2Movement.y -= 0.33f;
 
