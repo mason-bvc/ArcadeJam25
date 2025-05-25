@@ -15,7 +15,7 @@ public class TimeLimit : MonoBehaviour
         if (_timeLimit > 0)
         {
             _timeLimit -= Time.deltaTime;
-            _timeText.SetText((Mathf.Round(_timeLimit * 100) / 100).ToString());
+            _timeText.SetText(Mathf.Round(_timeLimit).ToString());
         }
         else if (_isAlive)
         {
