@@ -1,17 +1,15 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text _kmhText;
-
-    [SerializeField]
-    private TMP_Text _gearText;
 
     [SerializeField]
     private Transform _carTransform;
+
+    [SerializeField] private Slider _slider;
 
     private PlayerControl _playerControl;
     private GearShiftHandler _gearShiftHandler;
@@ -19,12 +17,10 @@ public class HUD : MonoBehaviour
     public void Start()
     {
         _playerControl = _carTransform.GetComponent<PlayerControl>();
-        _gearShiftHandler = _carTransform.GetComponent<GearShiftHandler>();
     }
 
     public void FixedUpdate()
     {
-        _kmhText.text = string.Format("{0:000} KM/H", _playerControl.GetCurrentVelocity());
-        _gearText.text = string.Format("Gear: {0}", (int)_gearShiftHandler.CurrentGear);
+        _slider.value = _playerControl.GetCurrentVelocity()/90;
     }
 }

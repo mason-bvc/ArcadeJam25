@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08b0012b242df2744a454b52ebeb47cf
+guid: 16dcbc44e9ca30d4984bec1fc8ed3f3d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gear Shift_0
+      name: Score__Timer_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 160
-        height: 161
+        x: 1
+        y: 81
+        width: 318
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e61a3a69e1b8d04ba596d3aa458806b
-      internalID: -1480616109
+      spriteID: fbf90b238b450f74992eaf3091cddf40
+      internalID: -2004744697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gear Shift_1
+      name: Score__Timer_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 28
-        height: 28
+        x: 0
+        y: 1
+        width: 320
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 233cf14fe20726e408382ebc5449d089
-      internalID: 2026639745
+      spriteID: d1de0d282409a1648af5ec736c916805
+      internalID: -1980881363
       vertices: []
       indices: 
       edges: []
@@ -157,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f8422b875d8b9b04aba2543e8d7b7224
+    spriteID: d82e7b0d525ab0f428106ea130887dc8
     internalID: 0
     vertices: []
     indices: 
@@ -165,10 +152,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Gear Shift_0: -1480616109
-      Gear Shift_1: 2026639745
+      Score__Timer_0: -2004744697
+      Score__Timer_1: -1980881363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
