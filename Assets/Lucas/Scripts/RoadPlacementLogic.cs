@@ -9,6 +9,10 @@ public class RoadPlacementLogic : MonoBehaviour
     [SerializeField] private int _amountForDecrease;
     [SerializeField] private SegmentPlacer _segmentPlacer;
     [SerializeField] private int _amountToStart;
+    [SerializeField] private Segments _checkpoint;
+    [SerializeField] private int _checkpointDistance;
+    [SerializeField] private int _addDistance;
+    private int _currentDistance = 0;
 
     private int _amountTillReduced = 10;
 
@@ -36,8 +40,13 @@ public class RoadPlacementLogic : MonoBehaviour
     public void PlaceSegment()
     {
         Segments chosenSegment = _defaultSegment;
-
-        if (Random.Range(1, _chanceForObstacle) == 1)
+        if (_currentDistance >= _checkpointDistance)
+        {
+            chosenSegment = _checkpoint;
+            _currentDistance = 0;
+            _checkpointDistance += _addDistance;
+        }
+        else if (Random.Range(1, _chanceForObstacle) == 1)
         {
             chosenSegment = _obstacleSegments[Random.Range(0, _obstacleSegments.Count)];
         }
@@ -50,6 +59,7 @@ public class RoadPlacementLogic : MonoBehaviour
         }
 
         _segmentPlacer.PlaceSegment(chosenSegment);
+        _currentDistance += 1;
     }
 
 
