@@ -15,20 +15,20 @@ public class GearShiftHandler : MonoBehaviour
     }
 
     private readonly List<Key> _inputQueue = new();
-    private Gear _currentGear;
 
     public readonly UnityEvent<Gear> Shifted = new();
+    public Gear CurrentGear { get; private set; }
 
     public void Update()
     {
         var keyboard = Keyboard.current;
         Key key = default;
-        var newGear = _currentGear;
+        var newGear = CurrentGear;
 
         bool shouldShiftBackToNeutral = false;
 
-        shouldShiftBackToNeutral |= (_currentGear == Gear.First || _currentGear == Gear.Third) && keyboard.downArrowKey.wasPressedThisFrame;
-        shouldShiftBackToNeutral |= (_currentGear == Gear.Second || _currentGear == Gear.Fourth) && keyboard.upArrowKey.wasPressedThisFrame;
+        shouldShiftBackToNeutral |= (CurrentGear == Gear.First || CurrentGear == Gear.Third) && keyboard.downArrowKey.wasPressedThisFrame;
+        shouldShiftBackToNeutral |= (CurrentGear == Gear.Second || CurrentGear == Gear.Fourth) && keyboard.upArrowKey.wasPressedThisFrame;
 
         if (shouldShiftBackToNeutral)
         {
@@ -89,13 +89,13 @@ public class GearShiftHandler : MonoBehaviour
             }
         }
 
-        if (newGear != _currentGear)
+        if (newGear != CurrentGear)
         {
             Debug.Log($"Switched gear to {newGear}");
             _inputQueue.Clear();
         }
 
-        _currentGear = newGear;
+        CurrentGear = newGear;
         Shifted.Invoke(newGear);
     }
 }
