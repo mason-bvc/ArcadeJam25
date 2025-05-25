@@ -5,6 +5,7 @@ public class TimeLimit : MonoBehaviour
     [SerializeField] private PlayerControl _player;
     [SerializeField] private RoadPlacementLogic _roadPlacement;
     [SerializeField] private float _timeLimit;
+    private bool _isAlive = true;
 
     private void Update()
     {
@@ -13,10 +14,11 @@ public class TimeLimit : MonoBehaviour
         {
             _timeLimit -= Time.deltaTime;
         }
-        else
+        else if (_isAlive)
         {
             _player.Explode();
             _timeLimit = 0;
+            _isAlive = false;
         }
     }
 

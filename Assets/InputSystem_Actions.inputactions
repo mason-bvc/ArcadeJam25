@@ -545,7 +545,7 @@
                     "id": "36a30d87-9bda-42f5-9dfe-5f03bc7395ee",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -554,7 +554,7 @@
                     "id": "4d4e80f8-ac61-4955-948b-b804924b0e2f",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],

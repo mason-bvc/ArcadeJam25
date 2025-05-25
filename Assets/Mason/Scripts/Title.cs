@@ -7,16 +7,20 @@ public class Title : MonoBehaviour
     public readonly UnityEvent PressedStart = new();
     public readonly UnityEvent PressedQuit = new();
 
-    public void Update()
-    {
-        var keyboard = Keyboard.current;
 
-        if (keyboard.enterKey.wasPressedThisFrame)
+    private void OnBl_1(InputValue input)
+    {
+        Debug.Log("Done");
+        if (input.isPressed)
         {
             PressedStart.Invoke();
         }
+    }
 
-        if (keyboard.escapeKey.wasPressedThisFrame)
+    private void OnExit_Button(InputValue input)
+    {
+        Debug.Log("Done");
+        if (input.isPressed)
         {
             PressedQuit.Invoke();
         }
