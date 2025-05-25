@@ -153,15 +153,11 @@ public class GearShiftHandler : MonoBehaviour
     {
         Vector2 movement = input.Get<Vector2>();
         //Debug.Log(movement);
-        if (movement == Vector2.zero)
+        if (movement.x == 0 && movement.y != 0)
         {
-            _lastValidInput = movement;
+            //Nothing lmao
         }
-        else if (_lastValidInput.x != movement.x && movement.y == 0)
-        {
-            _lastValidInput = movement;
-        }
-        else if (movement.y != _lastValidInput.y)
+        else
         {
             _lastValidInput = movement;
         }
