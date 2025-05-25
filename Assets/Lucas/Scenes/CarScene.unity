@@ -5958,10 +5958,9 @@ MonoBehaviour:
   - {fileID: 1867497868753201817, guid: 2f6ef54c4fb1c5d4f8f95ac7d2a82847, type: 3}
   - {fileID: 1867497868753201817, guid: 4a7895f8eda9971408edde0e656cdef7, type: 3}
   - {fileID: 1867497868753201817, guid: 05c23b383c86f7a408decaf1501de969, type: 3}
-  _chanceForObstacle: 25
-  _amountForDecrease: 40
+  _chanceForObstacle: 15
   _segmentPlacer: {fileID: 1622443516}
-  _amountToStart: 60
+  _segmentsToStart: 60
   _checkpoint: {fileID: 1867497868753201817, guid: 99ec4a256bd1e604d85b1490f8bf92a4, type: 3}
   _checkpointDistance: 100
   _addDistance: 20
@@ -6006,6 +6005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 743289500}
+  _roadPlacement: {fileID: 1622443515}
   _timeLimit: 60
 --- !u!1 &1650446265
 GameObject:

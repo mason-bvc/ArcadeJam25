@@ -3,6 +3,7 @@ using UnityEngine;
 public class TimeLimit : MonoBehaviour
 {
     [SerializeField] private PlayerControl _player;
+    [SerializeField] private RoadPlacementLogic _roadPlacement;
     [SerializeField] private float _timeLimit;
 
     private void Update()
@@ -22,5 +23,6 @@ public class TimeLimit : MonoBehaviour
     public void AddTime(float time)
     {
         _timeLimit += time;
+        _roadPlacement.IncreaseChancesForObstacles();
     }
 }
