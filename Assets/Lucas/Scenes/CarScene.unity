@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 559541606595747915, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _speed: 30
+  _speed: 0
   _breakSpeed: 30
   _maxSpeed: 50
   _laneSwitchSpeed: 0
