@@ -209,7 +209,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: b436fd64-d2f6-4bad-ba64-51087216c836
+  m_DefaultActionMap: ArcadeControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &2647058829520520742
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRESS START
+  m_text: PRESS 1 TO START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
