@@ -19,9 +19,9 @@ public class PlayerControl : MonoBehaviour
     public UnityEvent onDeath;
 
     private Rigidbody _rigidbody;
-    private bool _isAlive = true; 
+    private bool _isAlive = true;
 
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +47,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Explode()
     {
+        Game.PlayerDied.Invoke();
         Debug.Log("Collision happened");
         _isAlive = false;
         onDeath.Invoke();
@@ -79,7 +80,7 @@ public class PlayerControl : MonoBehaviour
             movement = new Vector3(vector2Movement.x * _laneSwitchSpeed, 0, vector2Movement.y * _speed);
         }
 
-        
+
 
         if (GetCurrentVelocity() + movement.z < 0)
         {
@@ -91,7 +92,7 @@ public class PlayerControl : MonoBehaviour
             _motorSound.pitch = (GetCurrentVelocity()+10)/25;
         }
         _motorSound.volume = GetCurrentVelocity()/10;
-        
+
     }
 
     public float GetCurrentVelocity()

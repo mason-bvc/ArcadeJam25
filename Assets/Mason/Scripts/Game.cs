@@ -1,11 +1,13 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
+    public static readonly UnityEvent PlayerDied = new();
     public static AudioClip IngameMusic { get; private set; }
     public static AudioClip LoseMusic { get; private set; }
     public static AudioClip TitleMusic { get; private set; }
@@ -35,8 +37,12 @@ public class Game : MonoBehaviour
     public void Start()
     {
         _musicAudioSource = GetComponent<AudioSource>();
-        // DoTitle();
-        StartCoroutine("DoGameOver");
+        DoTitle();
+
+        PlayerDied.AddListener(() =>
+        {
+            StartCoroutine("DoGameOver");
+        });
     }
 
     public void Update()
@@ -61,6 +67,11 @@ public class Game : MonoBehaviour
 
     private void DoTitle()
     {
+        if (CurrentRoot != null)
+        {
+            Destroy(CurrentRoot);
+        }
+
         _isIngame = false;
 
         _musicAudioSource.clip = TitleMusic;
