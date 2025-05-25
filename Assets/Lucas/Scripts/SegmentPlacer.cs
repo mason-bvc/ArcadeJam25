@@ -5,7 +5,6 @@ using UnityEngine;
 public class SegmentPlacer : MonoBehaviour
 {
     private Vector3 _currentLocation = Vector3.zero;
-    [SerializeField] private Segments _startSegment;
     private List<GameObject> _segments = new List<GameObject>();
     private bool _isAlive = true;
 
