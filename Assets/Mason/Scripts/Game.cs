@@ -49,12 +49,6 @@ public class Game : MonoBehaviour
     {
         if (_isIngame)
         {
-            var keyboard = Keyboard.current;
-
-            if (keyboard.escapeKey.wasPressedThisFrame)
-            {
-                _isPaused = !_isPaused;
-            }
 
             Time.timeScale = 1;
 
@@ -62,6 +56,15 @@ public class Game : MonoBehaviour
             {
                 Time.timeScale = 0;
             }
+        }
+    }
+
+    private void OnExit_Button(InputValue input)
+    {
+        Debug.Log("Done");
+        if (input.isPressed)
+        {
+            _isPaused = !_isPaused;
         }
     }
 
