@@ -7,6 +7,13 @@ public class Title : MonoBehaviour
     public readonly UnityEvent PressedStart = new();
     public readonly UnityEvent PressedQuit = new();
 
+    private void OnBl_1(InputValue input)
+    {
+        Debug.Log("Done");
+        if (input.isPressed)
+        {
+            PressedStart.Invoke();
+        }
+    }
 
-    
 }
