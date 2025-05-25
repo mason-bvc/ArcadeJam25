@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class TimeLimit : MonoBehaviour
 {
-    [SerializeField] private PlayerControl _player;
     [SerializeField] private RoadPlacementLogic _roadPlacement;
     [SerializeField] private float _timeLimit;
     [SerializeField] private TMP_Text _timeText;
@@ -16,7 +15,7 @@ public class TimeLimit : MonoBehaviour
         if (_timeLimit > 0)
         {
             _timeLimit -= Time.deltaTime;
-            _timeText.SetText(_timeLimit.ToString());
+            _timeText.SetText((Mathf.Round(_timeLimit * 100) / 100).ToString());
         }
         else if (_isAlive)
         {
