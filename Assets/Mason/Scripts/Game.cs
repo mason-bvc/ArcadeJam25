@@ -59,15 +59,6 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void OnExit_Button(InputValue input)
-    {
-        Debug.Log("Done");
-        if (input.isPressed)
-        {
-            _isPaused = !_isPaused;
-        }
-    }
-
     private void DoTitle()
     {
         if (CurrentRoot != null)

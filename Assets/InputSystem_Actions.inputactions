@@ -540,7 +540,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Exit_Button",
+                    "name": "Re_1",
                     "type": "Button",
                     "id": "36a30d87-9bda-42f5-9dfe-5f03bc7395ee",
                     "expectedControlType": "",
@@ -672,11 +672,11 @@
                 {
                     "name": "",
                     "id": "5f82ac87-7aae-4313-936e-4d8edc6c28ed",
-                    "path": "<Mouse>/middleButton",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Exit_Button",
+                    "action": "Re_1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

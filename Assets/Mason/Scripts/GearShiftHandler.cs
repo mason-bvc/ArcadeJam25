@@ -157,6 +157,10 @@ public class GearShiftHandler : MonoBehaviour
         {
             //Nothing lmao
         }
+        else if (movement.x != 0 && movement.y == 0)
+        {
+
+        }
         else
         {
             _lastValidInput = movement;
