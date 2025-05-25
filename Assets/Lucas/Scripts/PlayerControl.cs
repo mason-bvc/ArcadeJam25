@@ -109,6 +109,11 @@ public class PlayerControl : MonoBehaviour
         _speed = newSpeed;
     }
 
+    public void ChangeTurnSpeed(float newSpeed)
+    {
+        _laneSwitchSpeed = newSpeed;
+    }
+
     public void ChangeBrakeSpeed(float newSpeed)
     {
         _breakSpeed = newSpeed;

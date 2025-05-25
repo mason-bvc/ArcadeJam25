@@ -1,7 +1,11 @@
 using UnityEngine;
-
+[RequireComponent(typeof(Collider))]
 public class AddTime : MonoBehaviour
 {
+    private void Awake()
+    {
+        GetComponent<Collider>().isTrigger = true;
+    }
     [SerializeField] private float timeToAdd;
     private void OnTriggerEnter(Collider other)
     {

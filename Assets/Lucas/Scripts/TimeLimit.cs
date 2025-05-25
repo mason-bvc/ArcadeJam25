@@ -1,9 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class TimeLimit : MonoBehaviour
 {
-    [SerializeField] private PlayerControl _player;
+    [SerializeField] private RoadPlacementLogic _roadPlacement;
     [SerializeField] private float _timeLimit;
+    [SerializeField] private TMP_Text _timeText;
+ 
+    private bool _isAlive = true;
 
     private void Update()
     {
@@ -11,16 +15,19 @@ public class TimeLimit : MonoBehaviour
         if (_timeLimit > 0)
         {
             _timeLimit -= Time.deltaTime;
+            _timeText.SetText(Mathf.Round(_timeLimit).ToString());
         }
-        else
+        else if (_isAlive)
         {
-            _player.Explode();
+            FindAnyObjectByType<PlayerControl>().Explode();
             _timeLimit = 0;
+            _isAlive = false;
         }
     }
 
     public void AddTime(float time)
     {
         _timeLimit += time;
+        _roadPlacement.IncreaseChancesForObstacles();
     }
 }
